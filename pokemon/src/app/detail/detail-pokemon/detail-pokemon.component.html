@@ -1,0 +1,29 @@
+
+<div class="container">
+    <div class="detail-pokemon-header">
+      <div class="detail-pokemon-info">
+        <label [hidden]="loadingInfo">Loading Information...</label>
+       <h1><label *ngFor="let kname of detailPkmn?.forms">{{kname.name}}</label></h1>
+        <span class="badge badge-pill badge-secondary" *ngFor="let item of detailPkmn?.types">{{item.type.name}}</span>
+      </div>
+      
+      <div class="detail-pokemon-images">
+        <img src="{{detailPkmn?.sprites.front_default}}">
+        <img src="{{detailPkmn?.sprites.back_default}}">
+      </div>
+  </div>
+  <div class="detail-pokemon-details">
+      <table class="table">
+          <thead>
+            <tr>
+              <th *ngFor="let lvls of sendIdPokemon.level" scope="col">Version {{lvls.level}}</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let lvls2 of sendIdPokemon.level; let i=index" >
+              <td *ngFor="let move of lvls2.moves">{{move.move}}</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</div>

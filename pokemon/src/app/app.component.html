@@ -1,0 +1,29 @@
+<div class="container">
+  <search-pokemon (displayName)="getNamePokemon($event)" (dataAvailableEmitter)="getStatusData($event)" [activeSuggestions]="suggestionsBox" (displayDetailsSingleView)="displaySingleDetails($event)" (displayDetailsEmmitter)="setDisplayDetails($event)"></search-pokemon>
+  <list-pokemon [namePokemon]="displayName" [statusData]="statusData" (detailsPokemon)="displaySingleDetails($event)"  *ngIf="displayMatchedPokemon"></list-pokemon>
+  <div *ngIf="displayHomeContent">
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          Please select the Pokemon doing <strong>click on the name</strong> or type the name and press <strong>[enter]</strong> 
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="card text-center">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Description about this quick-project</h5>
+            <p class="card-text">
+              API used: https://pokeapi.co/ , https://github.com/OmarDavilaP/services/blob/master/pokemons.json
+            </p>
+          </div>
+        </div>      
+  </div>
+  <detail-pokemon *ngIf="displayDetails" [sendIdPokemon]="sendIdPokemon" (suggestionsEmitter)="detailPokemon($event)"></detail-pokemon>
+</div>
+

@@ -1,0 +1,10 @@
+.container-search{
+    margin-top: 20px;
+}
+
+.dropdown-menu{
+    width: 100%;
+}
+.dropdown-menu li{
+    cursor: pointer;
+}

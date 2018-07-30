@@ -1,0 +1,19 @@
+.detail-pokemon-header{
+    display: inline-flex;
+    width: 100%;
+
+}
+.detail-pokemon-info{
+    width:50%;
+}
+.detail-pokemon-images{
+    width:50%;
+}
+.pokemonImage{
+    width: 50px;
+    height: 50px;
+}
+.badge{
+    margin: 10px;
+     cursor: pointer;
+}

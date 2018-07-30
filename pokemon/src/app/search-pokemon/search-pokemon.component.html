@@ -1,0 +1,17 @@
+<div class="container-search">
+<div class="dropdown clearfix">
+  
+<input class="form-control dropdown-toggle" type="text" (keyup)="searchPokemon($event)" (keyup.enter)="displayListEnter($event)">
+    <div [hidden]="suggestions" *ngIf="dataAvailable; else" >
+        <ul class="dropdown-menu show">
+          <li *ngFor="let key of resName" (click)="displayList(key)">
+            <img src="{{key.image}}" width="20" height="20">
+            <a> {{key.name}}</a>
+            </li>
+        </ul>
+  </div>
+  <ng-template #notFoundMessage>
+     <div> Pokemon not found</div>
+  </ng-template>
+</div>
+<div>

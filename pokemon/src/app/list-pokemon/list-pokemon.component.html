@@ -1,0 +1,11 @@
+<div class="container list-container">
+<div *ngIf="statusData; else">
+    <ul>
+        <li class="preview-pokemon" *ngFor="let key of namePokemon" (click)="displayDetails(key)">
+            <img class="rounded" src="{{key.image}}" width="120" height="120">{{key.name}}</li>
+    </ul>
+</div>
+<ng-template #notFoundMessage>
+    <div> Pokemon not found</div>
+ </ng-template>
+</div>
